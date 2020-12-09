@@ -45,8 +45,9 @@ Environment Variables:
 #### Name:
   jfrog support upload - Uploads support bundle to supportlogs.
 
-Usage:
-  jfrog support upload <filepath> <ticket>
+### Usage:
+```
+jfrog support upload <filepath> <ticket>
 
 Arguments:
   filepath
@@ -60,13 +61,14 @@ Environment Variables:
   SUPPORT_LOGS_URL
     [Default: https://supportlogs.jfrog.com/logs]
     Support logs base url - mostly for debug
-
+```
 
 #### Name:
   jfrog support encrypt - Encrypt secret using Artifactory master key. Output will be in the form '<kid>.aesgcm256.<encrypted message>' or '<kid>.aesgcm128.<encrypted message>' depends on the key length
 
 Usage:
-  jfrog support encrypt <plaintext> <key>
+```
+jfrog support encrypt <plaintext> <key>
 
 Arguments:
   plaintext
@@ -74,13 +76,14 @@ Arguments:
 
   key
     Artifactory master key
-
+```
 
 #### Name:
   jfrog support decrypt - Decrypt secret using Artifactory master key. Currently supports only encrypted messages of the form: '<kid>.aesgcm256.<encrypted message>' or '<kid>.aesgcm128.<encrypted message>'
 
 Usage:
-  jfrog support decrypt <secret> <key>
+```
+jfrog support decrypt <secret> <key>
 
 Arguments:
   secret
@@ -89,3 +92,4 @@ Arguments:
   key
     Artifactory master key
 
+```
