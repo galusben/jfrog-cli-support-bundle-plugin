@@ -13,7 +13,7 @@ func main() {
 func getApp() components.App {
 	app := components.App{}
 	app.Name = "support"
-	app.Description = "Perform support operations like creating and uploading support bundles"
+	app.Description = "Perform support operations like creating and uploading support bundles, encrypt decrypt passwords with master key etc."
 	app.Version = "v0.0.1"
 	app.Commands = getCommands()
 	return app
