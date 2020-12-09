@@ -12,14 +12,18 @@ func main() {
 
 func getApp() components.App {
 	app := components.App{}
-	app.Name = "hello-frog"
-	app.Description = "Easily greet anyone."
-	app.Version = "v0.1.0"
+	app.Name = "support"
+	app.Description = "Perform support operations like creating and uploading support bundles"
+	app.Version = "v0.0.1"
 	app.Commands = getCommands()
 	return app
 }
 
 func getCommands() []components.Command {
 	return []components.Command{
-		commands.GetHelloCommand()}
+		commands.GetUploadSupportBundleCommand(),
+		commands.GetGenerateSupportBundleCommand(),
+		commands.GetDecryptCommand(),
+		commands.GetEncryptCommand(),
+	}
 }
