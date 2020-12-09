@@ -76,12 +76,15 @@ func doEncrypt(c *encryptConfig) error {
 	if c.key == "" {
 		return errors.New("master key can not be empty")
 	}
-	key, _ := hex.DecodeString(c.key)
+	key, err := hex.DecodeString(c.key)
+	if err != nil {
+		return errors.New("could not read key - not a hex encoded string")
+	}
 	plaintext := []byte(c.plaintext)
 
 	block, err := aes.NewCipher(key)
 	if err != nil {
-		panic(err.Error())
+		return errors.New("error reading key")
 	}
 
 	nonce := make([]byte, 12)
