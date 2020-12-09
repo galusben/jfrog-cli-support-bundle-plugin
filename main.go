@@ -1,9 +1,9 @@
 package main
 
 import (
+	"github.com/galusben/jfrog-cli-support-bundle-plugin/commands"
 	"github.com/jfrog/jfrog-cli-core/plugins"
 	"github.com/jfrog/jfrog-cli-core/plugins/components"
-	"github.com/jfrog/jfrog-cli-plugin-template/commands"
 )
 
 func main() {

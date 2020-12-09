@@ -1,4 +1,4 @@
-module github.com/jfrog/jfrog-cli-plugin-template
+module github.com/galusben/jfrog-cli-support-bundle-plugin
 
 go 1.14
 
