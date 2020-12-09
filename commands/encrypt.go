@@ -19,7 +19,7 @@ func GetEncryptCommand() components.Command {
 		Name: "encrypt",
 		Description: "Encrypt secret using Artifactory master key. Output will be in the form" +
 			" '<kid>.aesgcm256.<encrypted message>' or '<kid>.aesgcm128.<encrypted message>' depends on the key length",
-		Aliases:   []string{"up"},
+		Aliases:   []string{"enc"},
 		Arguments: getEncryptArguments(),
 		Flags:     getEncryptFlags(),
 		EnvVars:   getEncryptEnvVar(),

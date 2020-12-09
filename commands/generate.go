@@ -21,7 +21,7 @@ func GetGenerateSupportBundleCommand() components.Command {
 	return components.Command{
 		Name:        "generate",
 		Description: "Generates support bundle to supportlogs.",
-		Aliases:     []string{"up"},
+		Aliases:     []string{"gen"},
 		Arguments:   getGenerateArguments(),
 		Flags:       getGenerateFlags(),
 		EnvVars:     getGenerateEnvVar(),

@@ -15,24 +15,77 @@ Since this plugin is currently not included in [JFrog CLI Plugins Registry](http
 
 ## Usage
 ### Commands
+#### Name:
+  jfrog support generate - Generates support bundle to supportlogs.
 
-## NAME:
-   support - Perform support operations like creating and uploading support bundles, encrypt decrypt passwords with master key etc.
+Usage:
+  jfrog support generate [command options]
 
-## USAGE:
-   support [global options] command [command options] [arguments...]
-   
-## VERSION:
-   v0.0.1
-   
-## COMMANDS:
-   upload, up    Uploads support bundle to supportlogs.
-   generate, up  Generates support bundle to supportlogs.
-   decrypt, up   Decrypt secret using Artifactory master key. Currently supports only encrypted messages of the form: '<kid>.aesgcm256.<encrypted message>' or '<kid>.aesgcm128.<encrypted message>'
-   encrypt, up   Encrypt secret using Artifactory master key. Output will be in the form '<kid>.aesgcm256.<encrypted message>' or '<kid>.aesgcm128.<encrypted message>' depends on the key length
-   help, h       Shows a list of commands or help for one command
-   
-## GLOBAL OPTIONS:
-   --help, -h     show help
-   --version, -v  print the version
-   
+Options:
+  --server-id          [Optional] Artifactory server ID configured using the config command.
+  --send-to-support    [Default: false] Rather to upload the support bundle to JFrog support or not
+  --ticket             [Optional] Ticket identifier for JFrog support team - must be provided when send-to-support = true
+  --name               [Optional] Support bundle name - when empty will be auto generated
+  --description        [Optional] Support bundle description
+  --config             [Default: true] Include service configuration
+  --system             [Default: true] Include service system information
+  --logs               [Default: false] Include logs
+  --dumps              [Default: false] Include thread dumps
+  --dumps-count        [Optional] number of times to collect thread dump. Default:1
+  --dumps-interval     [Optional] Interval between times of collection in milliseconds. Default:0
+  --start              [Optional] start date from which to fetch the logs. pattern: YYYY-MM-DD
+  --end                [Optional] end date until which to fetch the logs. pattern: YYYY-MM-DD
+  
+Environment Variables:
+  SUPPORT_LOGS_URL
+    [Default: https://supportlogs.jfrog.com/logs]
+    Support logs base url - mostly for debug
+
+
+#### Name:
+  jfrog support upload - Uploads support bundle to supportlogs.
+
+Usage:
+  jfrog support upload <filepath> <ticket>
+
+Arguments:
+  filepath
+    Bundle path on the local file system
+
+  ticket
+    Ticket number
+
+
+Environment Variables:
+  SUPPORT_LOGS_URL
+    [Default: https://supportlogs.jfrog.com/logs]
+    Support logs base url - mostly for debug
+
+
+#### Name:
+  jfrog support encrypt - Encrypt secret using Artifactory master key. Output will be in the form '<kid>.aesgcm256.<encrypted message>' or '<kid>.aesgcm128.<encrypted message>' depends on the key length
+
+Usage:
+  jfrog support encrypt <plaintext> <key>
+
+Arguments:
+  plaintext
+    Plain text to encrypt
+
+  key
+    Artifactory master key
+
+
+#### Name:
+  jfrog support decrypt - Decrypt secret using Artifactory master key. Currently supports only encrypted messages of the form: '<kid>.aesgcm256.<encrypted message>' or '<kid>.aesgcm128.<encrypted message>'
+
+Usage:
+  jfrog support decrypt <secret> <key>
+
+Arguments:
+  secret
+    The secret to decrypt
+
+  key
+    Artifactory master key
+

@@ -2,7 +2,7 @@ package commands
 
 import "os"
 
-const supportLogsUrl string = "http://supportlogs.jfrog.com/logs"
+const supportLogsUrl string = "https://supportlogs.jfrog.com/logs"
 const supportLogsUrlEnvVarName string = "SUPPORT_LOGS_URL"
 
 func getSupportLogsUrl() string {

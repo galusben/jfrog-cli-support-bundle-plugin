@@ -17,7 +17,7 @@ func GetDecryptCommand() components.Command {
 		Name: "decrypt",
 		Description: "Decrypt secret using Artifactory master key. Currently supports only encrypted messages of the form:" +
 			" '<kid>.aesgcm256.<encrypted message>' or '<kid>.aesgcm128.<encrypted message>'",
-		Aliases:   []string{"up"},
+		Aliases:   []string{"dec"},
 		Arguments: getDecryptArguments(),
 		Flags:     getDecryptFlags(),
 		EnvVars:   getDecryptEnvVar(),
