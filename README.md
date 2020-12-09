@@ -19,7 +19,8 @@ Since this plugin is currently not included in [JFrog CLI Plugins Registry](http
   jfrog support generate - Generates support bundle to supportlogs.
 
 Usage:
-  jfrog support generate [command options]
+```
+jfrog support generate [command options]
 
 Options:
   --server-id          [Optional] Artifactory server ID configured using the config command.
@@ -40,7 +41,7 @@ Environment Variables:
   SUPPORT_LOGS_URL
     [Default: https://supportlogs.jfrog.com/logs]
     Support logs base url - mostly for debug
-
+```
 
 #### Name:
   jfrog support upload - Uploads support bundle to supportlogs.
