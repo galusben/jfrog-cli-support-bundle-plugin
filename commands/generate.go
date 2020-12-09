@@ -137,6 +137,7 @@ func generateCmd(c *components.Context) error {
 		return err
 	}
 	clientDetails := auth.CreateHttpClientDetails()
+	log.Info("Generating support bundle")
 	responseModel, err := createBundle(clientDetails, rtDetails, rtClient, model)
 	if err != nil {
 		return err
