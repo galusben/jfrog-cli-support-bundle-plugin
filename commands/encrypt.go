@@ -10,6 +10,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/jfrog/jfrog-cli-core/plugins/components"
+	"github.com/jfrog/jfrog-client-go/utils/log"
 	"io"
 	"strconv"
 )
@@ -100,7 +101,8 @@ func doEncrypt(c *encryptConfig) error {
 	ciphertext := aesgcm.Seal(nil, nonce, plaintext, nil)
 	secret := append(nonce, ciphertext...)
 	keysha256 := sha256.Sum256(key)
-	fmt.Printf("%v.%v%v.%v", hex.EncodeToString(keysha256[:])[0:6], "aesgcm", 8*len(key),
+	encryptedMessage := fmt.Sprintf("%v.%v%v.%v", hex.EncodeToString(keysha256[:])[0:6], "aesgcm", 8*len(key),
 		b64.URLEncoding.EncodeToString(secret))
+	log.Output(encryptedMessage)
 	return nil
 }
