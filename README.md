@@ -10,8 +10,9 @@ Since this plugin is currently not included in [JFrog CLI Plugins Registry](http
 2. Create a directory named ```plugins``` under ```~/.jfrog/``` if it does not exist already.
 3. Clone this repository.
 4. CD into the root directory of the cloned project.
-5. Run ```go build``` to create the binary in the current directory.
-6. Copy the binary into the ```~/.jfrog/plugins``` directory.
+5. Use one of the latest goland client version.
+6. Run ```go build``` to create the binary in the current directory.
+7. Copy the binary into the ```~/.jfrog/plugins``` directory.
 
 ## Usage
 ### Commands
